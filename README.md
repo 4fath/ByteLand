@@ -22,13 +22,28 @@ For each test case, output a separate line containing one number, equal to the m
 - 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** Test Case Count
 - 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** How many cities is in **1th** Case
 - 0 1 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** Roads between **1th** case cities
-- 8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** How many cities is in **2th** Case
-- 0 1 2 0 0 3 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** Roads between **2th** case cities
-- 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** How many cities is in **3th** Case
-- 0 1 1 1 1 0 2 2 &nbsp;&nbsp;&nbsp;**=>** Roads between **3th** cases cities
+- 8 
+- 0 1 2 0 0 3 3 
+- 9 
+- 0 1 1 1 1 0 2 2
 
 ##### Output:
 - 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** 1th cases minimum step for unification
 - 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** 2th ...
 - 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**=>** 3th ...
 
+### Solution Approach
+
+Used a pojo <code>City</code> for modelling each city. 
+Generating cities at bootstrap for each case without roads. Then linking cities with given roads.
+And here code snippet : 
+<code> 
+ - Iterate each city is not unified 
+ - find this city's min linked and not unified neighbor
+ - if null add this city to next steps array and go to next city of city list
+ - merge these cities 
+ - in merge process, collect the merged cities neighbors in one city. in that case first city in merge process
+ - TODO : complete approach desc.. 
+
+
+</code>
