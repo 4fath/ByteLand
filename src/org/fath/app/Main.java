@@ -97,7 +97,7 @@ public class Main {
 
     private static City findMinLinkedAndNotUnitedCity(City city) {
 
-        int minLinkCount = 601;
+        int minLinkCount = 599;
 
         City minLinkedCity = null;
 
