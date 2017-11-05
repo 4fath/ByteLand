@@ -29,18 +29,16 @@ public class Main {
 
             linkCitiesWithGivenRoad(cityList, thisCitiesRoadMap);
 
-            calculateMinStepForUnification(cityList, 0);
+            calculateMinStepForUnification(cityList, 1);
 
         }
 
 
     }
 
-    private static void calculateMinStepForUnification(List<City> cityList, int stepCount) throws CloneNotSupportedException {
+    private static void calculateMinStepForUnification(List<City> cityList, int stepCount) {
 
         List<City> nextStepList = new ArrayList<>();
-
-        clearCityUnifiedStatus(cityList);
 
         for (City city : cityList) {
             if (!city.isUnited()) {
@@ -49,13 +47,11 @@ public class Main {
 
                 if (willMergeCity != null) {
                     linkSourceCitiesRoadsToTargetCity(willMergeCity, city);
-                    city.setUnited(false);
-                    nextStepList.add(city);
+                    nextStepList.add(city);             // take this city to next step
                     willMergeCity.setUnited(true);
                     city.setUnited(true);
                 } else {
-                    city.setUnited(false);
-                    nextStepList.add(city);
+                    nextStepList.add(city);             // take this city directly to next step
                     city.setUnited(true);
                 }
             }
@@ -63,11 +59,11 @@ public class Main {
 
 
         if (nextStepList.size() == 1) {
-            System.out.println("Min step for unification : " + stepCount + 1 + " Viva Byte Land, make ByteLand binary again !!");
+            System.out.println("Min step for unification : " + stepCount + " Viva Byte Land, make ByteLand binary again !!");
         } else {
+            clearCityUnifiedStatus(nextStepList);
             calculateMinStepForUnification(nextStepList, stepCount + 1);
         }
-
 
     }
 
@@ -97,7 +93,7 @@ public class Main {
 
     private static City findMinLinkedAndNotUnitedCity(City city) {
 
-        int minLinkCount = 599;
+        int minLinkCount = 599; //
 
         City minLinkedCity = null;
 
